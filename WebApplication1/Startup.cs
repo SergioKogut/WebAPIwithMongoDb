@@ -29,7 +29,8 @@ namespace WebApplication1
 
             services.AddSingleton<IProductstoreDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<ProductstoreDatabaseSettings>>().Value);
-            services.AddControllersWithViews();
+
+            services.AddControllersWithViews().AddNewtonsoftJson(options => options.UseMemberCasing()); ;
 
             services.AddSingleton<ProductService>();
 
