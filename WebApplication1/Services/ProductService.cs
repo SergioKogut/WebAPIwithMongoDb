@@ -16,8 +16,7 @@ namespace WebApplication1.Services
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-
-            _products = database.GetCollection<Product>(settings.ProductsCollectionName);
+         _products = database.GetCollection<Product>(settings.ProductsCollectionName);
         }
 
         public List<Product> Get() =>
